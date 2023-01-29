@@ -1,0 +1,96 @@
+@import "../../assets/variables";
+
+.navbar {
+  padding: 1.2rem 1rem;
+  background: linear-gradient(to right, $primary-light, $primary-dark-lighter);
+  animation: navbarDown 1.5s normal;
+  display: flex;
+  justify-content: space-around;
+  transition: all 0.5s linear;
+  position: sticky;
+
+  &--options {
+    display: flex;
+    flex-basis: auto;
+
+    button {
+      padding: 0.5rem 2rem;
+      border-radius: 10rem;
+      border: 0;
+      box-shadow: 0 0.2rem rgba($color: black, $alpha: 0.5);
+      outline: none;
+      cursor: pointer;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background-color: white;
+      color: $primary-light;
+      transition: all 0.1s linear;
+
+      &:hover {
+        background-color: $primary-light-lighter;
+        color: white;
+      }
+    }
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  color: $white-color;
+  font-size: 1.9rem;
+  margin-right: 3rem;
+
+  li {
+    cursor: pointer;
+    font-size: 500;
+    transition: all 0.2s linear;
+    position: relative;
+    display: inline-block;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0.3rem;
+      width: 0;
+      background-color: $font-black;
+      bottom: -0.2rem;
+      left: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: $primary-light-lighter;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.logo {
+  &--text {
+    font-family: "Cedarville Cursive", cursive;
+    font-size: 3.3rem;
+    color: $font-white;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      text-shadow: 0 0 1rem rgba($color: $primary-dark, $alpha: 0.2);
+    }
+  }
+}
+
+@keyframes navbarDown {
+  0% {
+    transform: translateY(-10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
